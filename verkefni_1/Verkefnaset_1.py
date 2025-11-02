@@ -5,25 +5,44 @@ def verkefni_1():
 
 
 def verkefni_2():
-    number = input("Sláðu inn tölu: ")
-    # Lausn hér
+    number = int(input("Sláðu inn tölu: "))
+    if number % 2 == 0:
+        print("Talan er slétt")
+    else:
+        print("Talan er oddatala")
 
 
 def verkefni_3():
-    num1 = input("Fyrri tala: ")
-    num2 = input("Seinni tala: ")
+    num1 = int(input("Fyrri tala: "))
+    num2 = int(input("Seinni tala: "))
     operation = input("Veldu aðgerð (+, -, *, /): ")
-    # Lausn hér
+    if operation == '+':
+        print(num1 + num2)
+    elif operation == '-':
+        print(num1 - num2)
+    elif operation == '*':
+        print(num1 * num2)
+    elif operation == '/':
+        print(num1 / num2)
+
 
 
 def verkefni_4():
-    number = input("Sláðu inn tölu: ")
-    # Lausn hér
+    number = int(input("Sláðu inn tölu: "))
+    for i in range(1, 11):
+        print(i * number)
 
 
 def verkefni_5():
     target = 27
-    # Lausn hér
+    gisk = -1
+    while gisk != target:
+        gisk = int(input("Sláðu inn gisk: "))
+        if gisk > target:
+            print("Of stór tala")
+        elif gisk < target:
+            print("Of lítil tala")
+    print("Þú vannast!")
 
 
 def verkefni_6():
