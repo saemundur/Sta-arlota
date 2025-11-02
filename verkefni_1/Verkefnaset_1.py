@@ -1,6 +1,7 @@
 def verkefni_1():
-    celsius = input("Sláðu inn hitastig í Celsius: ")
-    # Lausn hér
+    celsius = int(input("Sláðu inn hitastig í Celsius: "))
+    print(celsius * (9/5) + 32)
+    
 
 
 def verkefni_2():
