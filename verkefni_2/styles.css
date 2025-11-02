@@ -4,3 +4,11 @@
 /* Example (commented):
 body { font-family: system-ui, sans-serif; }
 */
+
+button {
+   background-color: red;
+   color: white;
+   border: none;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+}
