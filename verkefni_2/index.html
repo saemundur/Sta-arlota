@@ -8,10 +8,63 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Empty starter template: students add HTML here -->
-  <h1>Hello world!</h1>
-  <p>Lorem ipsum</p>
-  <button>This is my button</button>
+  <!-- Starter ledger for tracking the "starfsmannasjóður" -->
+  <main class="container">
+    <header class="page-header">
+      <h1>Starfsmannasjóður — Yfirlit</h1>
+      <p class="lead">A simple ledger showing transactions by employees and a per-contributor total.</p>
+    </header>
+
+    <section class="controls">
+      <!-- transaction entry form + small counter -->
+      <form id="transactionForm" class="tx-form" aria-label="Add transaction">
+        <label>
+          <span class="sr">Dagsetning</span>
+          <input type="date" id="txDate" required />
+        </label>
+        <label>
+          <span class="sr">Starfsmaður</span>
+          <select id="txEmployee">
+            <option>Daníel</option>
+            <option>Georg</option>
+            <option>Ólafur</option>
+          </select>
+        </label>
+        <label>
+          <span class="sr">Lýsing</span>
+          <input type="text" id="txDescription" placeholder="Lýsing" required />
+        </label>
+        <label>
+          <span class="sr">Upphæð (ISK)</span>
+          <input type="number" id="txAmount" placeholder="Upphæð" required min="0" step="1" />
+        </label>
+        <div class="form-actions">
+          <button type="submit">Bæta við færslu</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="ledger">
+      <table id="transactionsTable">
+        <caption>Færslur starfsmanna</caption>
+        <thead>
+          <tr>
+            <th scope="col">Dagsetning</th>
+            <th scope="col">Starfsmaður</th>
+            <th scope="col">Lýsing</th>
+            <th scope="col" class="right">Upphæð (ISK)</th>
+          </tr>
+        </thead>
+        <tbody id="transactionsBody">
+          <!-- Rows injected by script.js -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="summary" class="summary">
+      <!-- Per-contributor totals injected here -->
+    </section>
+  </main>
   <!-- Students: add your JS in script.js -->
   <script src="script.js"></script>
 </body>

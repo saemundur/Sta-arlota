@@ -5,10 +5,92 @@
 body { font-family: system-ui, sans-serif; }
 */
 
-button {
-   background-color: red;
-   color: white;
-   border: none;
-   padding: 0.5rem 1rem;
-   cursor: pointer;
+/* Basic page layout and typography */
+:root{
+   --bg:#f7f9fb;
+   --card:#ffffff;
+   --muted:#6b7280;
+   --accent:#d62828; /* a warm red */
+   --accent-2:#1f7a8c;
+   --olafur:#1f7aef; /* blue */
+   --georg:#d62828;  /* red */
+   --daniel:#16a34a; /* green */
+}
+*{box-sizing:border-box}
+body{
+   margin:0;
+   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+   background:var(--bg);
+   color:#0f172a;
+   line-height:1.4;
+   padding:2rem;
+}
+.container{
+   max-width:900px;
+   margin:0 auto;
+   background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+   border-radius:10px;
+   padding:1.25rem 1.5rem 2rem 1.5rem;
+   box-shadow:0 6px 24px rgba(15,23,42,0.06);
+}
+.page-header h1{margin:0 0 0.25rem 0;font-size:1.5rem}
+.lead{margin:0 0 1rem 0;color:var(--muted)}
+
+.controls{display:flex;justify-content:flex-end;margin-bottom:1rem}
+
+/* Transaction form styles */
+.tx-form{display:flex;gap:0.5rem;align-items:center}
+.tx-form label{display:flex;flex-direction:column;font-size:0.85rem;color:var(--muted)}
+.tx-form input[type="text"],
+.tx-form input[type="date"],
+.tx-form input[type="number"],
+.tx-form select{padding:0.4rem 0.5rem;border-radius:6px;border:1px solid #e6e9ee;background:transparent}
+.form-actions{display:flex;align-items:end}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+
+button{
+   background-color:var(--accent);
+   color:white;
+   border:none;
+   padding:0.45rem 0.75rem;
+   border-radius:6px;
+   cursor:pointer;
+   font-weight:600;
+}
+button:hover{opacity:0.95}
+
+/* Ledger table */
+.ledger{overflow:auto;margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
+caption{padding:0.5rem 1rem;font-weight:600;text-align:left}
+thead{background:#f3f4f6}
+th,td{padding:0.6rem 0.9rem;text-align:left}
+th.right,td.right{text-align:right}
+tbody tr:nth-child(odd){background:#fff}
+tbody tr:nth-child(even){background:#fbfdff}
+tbody td{border-bottom:1px solid #f1f5f9}
+
+.summary{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.card{background:var(--card);padding:0.75rem 1rem;border-radius:10px;box-shadow:0 2px 8px rgba(15,23,42,0.04);flex:1 1 200px}
+.card h3{margin:0 0 0.25rem 0;font-size:1rem}
+.card p{margin:0;color:var(--muted);font-weight:600}
+.amount{font-size:1.15rem;font-weight:700;margin-top:0.5rem}
+
+.employee-chip{display:inline-block;padding:0.2rem 0.5rem;border-radius:999px;background:#f1f5f9;color:#0f172a;font-size:0.85rem}
+
+/* Per-employee color variants */
+.employee-chip.emp-olafur{background:var(--olafur);color:#fff}
+.employee-chip.emp-georg{background:var(--georg);color:#fff}
+.employee-chip.emp-daniel{background:var(--daniel);color:#fff}
+
+/* Color accent on summary cards */
+.card.emp-olafur{border-left:4px solid var(--olafur)}
+.card.emp-georg{border-left:4px solid var(--georg)}
+.card.emp-daniel{border-left:4px solid var(--daniel)}
+
+@media (max-width:640px){
+   .container{padding:1rem}
+   th,td{padding:0.5rem}
+   .lead{font-size:0.95rem}
 }
